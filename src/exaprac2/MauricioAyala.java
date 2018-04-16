@@ -16,6 +16,8 @@ public class MauricioAyala {
         
         int opcion;
         int cantidadEmpleados=0;
+        String acumuladorNombres="";
+        String acumuladorPagos="";
         
         do
         {
@@ -43,22 +45,29 @@ public class MauricioAyala {
                     
                   }
                   
-                  for (int i = 0; i < 10; i++) 
+                  for (int i = 0; i < cantidadEmpleados; i++) 
                   {
-                     
+                     salarios[i]=(pagos[i]*horasTrabajadas[i])*0.10;
+                  }
+                  
+                  for(int i=0; i<cantidadEmpleados; i++)
+                  {
+                    
+                      acumuladorNombres+="\n" + nombres[i];
+                      acumuladorPagos+="\n" + salarios[i];
                   }
               break;
               case 2:
+                  JOptionPane.showMessageDialog(null,"Nombres Empleados\n" + acumuladorNombres);
               break;
                   
           }
-
-         
-         
-         
-        
-        
-        
+          
+           opcion=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el la opcion a ejecutar\n"
+                 + "                                          1.Agregar Empleado.\n"
+                 + "                                          2.Calcular Planilla "
+                 + "                                          3.Salir"));
+          
         }while(opcion!=3 || opcion<3);
 
         
